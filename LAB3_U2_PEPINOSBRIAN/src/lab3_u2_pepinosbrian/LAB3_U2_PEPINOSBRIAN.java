@@ -1,14 +1,7 @@
-
 package lab3_u2_pepinosbrian;
-
-
 import java.util.Scanner;
-
-
 public class LAB3_U2_PEPINOSBRIAN {
-
-   
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         // TODO code application logic here
         //DECLARACIÓN DE LOS ATRIBUTOS A UTILIZAR
         int op1,op2;

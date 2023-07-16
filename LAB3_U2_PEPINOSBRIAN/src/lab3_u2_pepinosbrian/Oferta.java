@@ -21,15 +21,22 @@ public class Oferta extends Producto {
 //SOBREESCRITURA DEL METODO OBTENERPRECIO QUE HEREDAMOS DE LA CLASE PRODUCTO IGUALMENTE CON UN PARAMETRO DE UNIDADES PEDIDAS QUE ESTARA DEFINIDO EN 5
     @Override
     public double obtenerPrecioPedido(int unidadesPedidas) {
-        double precioPedido = super.obtenerPrecioPedido(unidadesPedidas);
-        if (dias == 1) {
-            precioPedido *= 0.8; // Aplicar descuento del 20% si queda 1 día
+        double total=0;
+        if (getDias() == 1) {
+            setPrecio(getPrecio()-(getPrecio()*0.2)); 
+            total=getPrecio()*unidadesPedidas;
+            // Aplicar descuento del 20% si queda 1 día
         } else if (dias == 2 || dias == 3) {
-            precioPedido *= 0.85; // Aplicar descuento del 15% si quedan 2 o 3 días
+            setPrecio(getPrecio()-(getPrecio()*0.15)); 
+            total=getPrecio()*unidadesPedidas;
+            // Aplicar descuento del 15% si quedan 2 o 3 días
         } else if (dias > 3) {
-            precioPedido *= 0.9; // Aplicar descuento del 10% si quedan más de 3 días
+            setPrecio(getPrecio()-(getPrecio()*0.1)); 
+            total=getPrecio()*unidadesPedidas; // Aplicar descuento del 10% si quedan más de 3 días
+        }else{
+            total=getPrecio();
         }
-        return precioPedido;
+        return total;
     }
 
 }

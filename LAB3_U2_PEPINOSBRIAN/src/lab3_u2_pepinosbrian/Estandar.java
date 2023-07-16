@@ -25,11 +25,15 @@ public class Estandar extends Producto {
     @Override
     public double obtenerPrecioPedido(int unidadesPedidas) {
         //HEREDAMOS EL VALOR DEL METODO DE LA CLASE PADRE obtenerPrecioPedido con la palabra super
-        double precioPedido = super.obtenerPrecioPedido(unidadesPedidas);
+        double total=0;
         if (unidadesPedidas >= 5) {
-            precioPedido *= 0.9; 
+            setPrecio(getPrecio()-(getPrecio()*0.10)); 
+            total=getPrecio()*unidadesPedidas;
+        }else{
+            total=getPrecio();
         }
-        return precioPedido;
+        
+        return total;
     }
     
 }
