@@ -54,8 +54,8 @@ public class LAB3_U2_PEPINOSBRIAN {
                                 
                             }
                             //ATRAVEZ DEL BUCLE FOR EACH CALACULAMOS LOS PRECIOS
-                            for (Oferta productoOfertado : productosOfertados) {
-                                totalPedidofertado += productoOfertado.obtenerPrecioPedido(unidadesPedidas);
+                            for (Oferta r : productosOfertados) {
+                                totalPedidofertado += r.obtenerPrecioPedido(unidadesPedidas);
                             }
                             System.out.println("Total del pedido: " + totalPedidofertado);
                             break;
